@@ -17,12 +17,12 @@ func encode(strings []string) string {
 	return encoded
 }
 
-func decoder(s string, start_idx int, end_idx int) (int, string) {
+func decoder(s string, startIdx int, endIdx int) (int, string) {
 	// get word length
-	wordLen, _ := strconv.Atoi(s[start_idx:end_idx])
+	wordLen, _ := strconv.Atoi(s[startIdx:endIdx])
 
 	// get word
-	word := s[end_idx+1 : end_idx+1+wordLen]
+	word := s[endIdx+1 : endIdx+1+wordLen]
 
 	return wordLen, word
 }
