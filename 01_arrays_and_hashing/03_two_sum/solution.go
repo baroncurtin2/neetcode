@@ -5,18 +5,17 @@ import "fmt"
 func twoSum(nums []int, target int) []int {
 	hash := make(map[int]int)
 
-	for i, num := range nums {
+	for index, num := range nums {
 		numTarget := target - num
 
-		if idx, isPresent := hash[numTarget]; isPresent {
-			return []int{idx, i}
+		if seenIdx, isPresent := hash[numTarget]; isPresent {
+			return []int{seenIdx, index}
 		}
 
-		hash[numTarget] = i
+		hash[num] = index
 	}
 
-	fmt.Println(hash)
-	return []int{}
+	return []int{0, 0}
 }
 
 func main() {
